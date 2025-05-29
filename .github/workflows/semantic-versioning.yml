@@ -2,8 +2,9 @@ name: Semantic Versioning
 
 on:
   push:
-    branches: [main]
-
+    branches:
+      [main]
+      # permission
 permissions:
   contents: write
   packages: write
