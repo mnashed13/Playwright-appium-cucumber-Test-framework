@@ -117,4 +117,3 @@ This will create `cucumber_report.html` in the project root.
 ## License
 
 MIT
-# Playwright-appium-cucumber-Test-framework
