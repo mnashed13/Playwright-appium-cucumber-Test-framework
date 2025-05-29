@@ -1,0 +1,18 @@
+name: Semantic Versioning
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  semantic-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Needed for tags
+      - name: Bump version and push tag
+        id: bump_version
+        uses: phips28/gh-action-bump-version@v10.1.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
