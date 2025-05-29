@@ -1,0 +1,26 @@
+{
+	"name": "playwright-appium-test-project",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"test:ios": "PLATFORM=ios npx cucumber-js --require-module ts-node/register --require step-definitions/**/*.ts --format @cucumber/pretty-formatter",
+		"test:android": "PLATFORM=android npx cucumber-js --require-module ts-node/register --require step-definitions/**/*.ts --format @cucumber/pretty-formatter",
+		"report": "cucumber-html-reporter --require cucumber_report.json --output cucumber_report.html",
+		"ios:simulator": "xcrun simctl boot 'iPhone 15' || true && open -a Simulator"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"devDependencies": {
+		"@cucumber/cucumber": "^11.3.0",
+		"@types/cucumber": "^7.0.3",
+		"@types/node": "^22.15.24",
+		"appium": "^2.18.0",
+		"cucumber-html-reporter": "^7.2.0",
+		"playwright": "^1.52.0",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.8.3"
+	}
+}
