@@ -1,11 +1,12 @@
 import { setWorldConstructor, World } from '@cucumber/cucumber';
-import { remote, RemoteOptions, Browser } from 'webdriverio';
+import { remote } from 'webdriverio';
+import type { Browser } from 'webdriverio';
 
-export let driver: Browser<'async'>;
+export let driver: Browser;
 
 class CustomWorld extends World {
 	async initDriver(platform: 'android' | 'ios') {
-		const opts: RemoteOptions = require(`../appium/appium.${platform}.conf.js`);
+		const opts = require(`../appium/appium.${platform}.conf.js`);
 		driver = await remote(opts);
 		return driver;
 	}
